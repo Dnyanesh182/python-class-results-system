@@ -1,4 +1,4 @@
-# UC5 – Calculate Average Marks for Each Student
+# UC6 – Determine Grade Based on Marks
 
 students = []
 
@@ -14,16 +14,26 @@ for i in range(2):
     total = marks1 + marks2 + marks3
     average = total / 3
 
+    if average >= 90:
+        grade = "A"
+    elif average >= 75:
+        grade = "B"
+    elif average >= 60:
+        grade = "C"
+    elif average >= 40:
+        grade = "D"
+    else:
+        grade = "F"
+
     student = {
         "name": name,
         "roll": roll,
-        "marks": [marks1, marks2, marks3],
-        "total": total,
-        "average": average
+        "average": average,
+        "grade": grade
     }
 
     students.append(student)
 
-print("\nStudent Average Marks:")
+print("\nStudent Grades:")
 for student in students:
-    print(student["name"], "Average Marks:", student["average"])
+    print(student["name"], "Average:", student["average"], "Grade:", student["grade"])
