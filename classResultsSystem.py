@@ -1,4 +1,4 @@
-# UC4 – Calculate Total Marks for Each Student
+# UC5 – Calculate Average Marks for Each Student
 
 students = []
 
@@ -12,16 +12,18 @@ for i in range(2):
     marks3 = float(input("Enter marks for Subject 3: "))
 
     total = marks1 + marks2 + marks3
+    average = total / 3
 
     student = {
         "name": name,
         "roll": roll,
         "marks": [marks1, marks2, marks3],
-        "total": total
+        "total": total,
+        "average": average
     }
 
     students.append(student)
 
-print("\nStudent Total Marks:")
+print("\nStudent Average Marks:")
 for student in students:
-    print(student["name"], "Total Marks:", student["total"])
+    print(student["name"], "Average Marks:", student["average"])
