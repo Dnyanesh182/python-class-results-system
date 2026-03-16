@@ -1,39 +1,24 @@
-# UC6 – Determine Grade Based on Marks
+# UC7 – Display Individual Student Result
 
-students = []
+students = [
+    {"name": "John", "roll": 101, "marks": [80, 85, 90], "average": 85.0, "grade": "B"},
+    {"name": "Alice", "roll": 102, "marks": [92, 88, 95], "average": 91.6, "grade": "A"}
+]
 
-for i in range(2):
+roll_number = int(input("Enter roll number to view result: "))
 
-    name = input("Enter student name: ")
-    roll = int(input("Enter roll number: "))
+found = False
 
-    marks1 = float(input("Enter marks for Subject 1: "))
-    marks2 = float(input("Enter marks for Subject 2: "))
-    marks3 = float(input("Enter marks for Subject 3: "))
-
-    total = marks1 + marks2 + marks3
-    average = total / 3
-
-    if average >= 90:
-        grade = "A"
-    elif average >= 75:
-        grade = "B"
-    elif average >= 60:
-        grade = "C"
-    elif average >= 40:
-        grade = "D"
-    else:
-        grade = "F"
-
-    student = {
-        "name": name,
-        "roll": roll,
-        "average": average,
-        "grade": grade
-    }
-
-    students.append(student)
-
-print("\nStudent Grades:")
 for student in students:
-    print(student["name"], "Average:", student["average"], "Grade:", student["grade"])
+    if student["roll"] == roll_number:
+        print("\nStudent Result")
+        print("Name:", student["name"])
+        print("Roll Number:", student["roll"])
+        print("Marks:", student["marks"])
+        print("Average:", student["average"])
+        print("Grade:", student["grade"])
+        found = True
+        break
+
+if not found:
+    print("Student record not found.")
