@@ -1,20 +1,21 @@
-# UC2 – Add Student Details (Name, Roll Number, Marks)
+# UC3 – Store Student Records in List or Dictionary
 
 students = []
 
-name = input("Enter student name: ")
-roll = int(input("Enter roll number: "))
-marks = float(input("Enter marks: "))
+for i in range(2):
 
-student = {
-    "name": name,
-    "roll": roll,
-    "marks": marks
-}
+    name = input("Enter student name: ")
+    roll = int(input("Enter roll number: "))
+    marks = float(input("Enter marks: "))
 
-students.append(student)
+    student = {
+        "name": name,
+        "roll": roll,
+        "marks": marks
+    }
 
-print("\nStudent added successfully.")
-print("Current Student Records:")
-for s in students:
-    print(s)
+    students.append(student)
+
+print("\nStored Student Records:")
+for student in students:
+    print(student)
