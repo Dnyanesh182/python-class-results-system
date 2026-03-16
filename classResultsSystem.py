@@ -1,24 +1,18 @@
-# UC7 – Display Individual Student Result
+# UC8 – Save Student Results to File
 
 students = [
     {"name": "John", "roll": 101, "marks": [80, 85, 90], "average": 85.0, "grade": "B"},
     {"name": "Alice", "roll": 102, "marks": [92, 88, 95], "average": 91.6, "grade": "A"}
 ]
 
-roll_number = int(input("Enter roll number to view result: "))
+with open("student_results.txt", "w") as file:
 
-found = False
+    for student in students:
+        file.write(f"Name: {student['name']}\n")
+        file.write(f"Roll Number: {student['roll']}\n")
+        file.write(f"Marks: {student['marks']}\n")
+        file.write(f"Average: {student['average']}\n")
+        file.write(f"Grade: {student['grade']}\n")
+        file.write("------------------------\n")
 
-for student in students:
-    if student["roll"] == roll_number:
-        print("\nStudent Result")
-        print("Name:", student["name"])
-        print("Roll Number:", student["roll"])
-        print("Marks:", student["marks"])
-        print("Average:", student["average"])
-        print("Grade:", student["grade"])
-        found = True
-        break
-
-if not found:
-    print("Student record not found.")
+print("Student results saved to file successfully.")

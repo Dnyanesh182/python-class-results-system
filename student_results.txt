@@ -1,0 +1,12 @@
+Name: John
+Roll Number: 101
+Marks: [80, 85, 90]
+Average: 85.0
+Grade: B
+------------------------
+Name: Alice
+Roll Number: 102
+Marks: [92, 88, 95]
+Average: 91.6
+Grade: A
+------------------------
