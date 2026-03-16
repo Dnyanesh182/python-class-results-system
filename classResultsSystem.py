@@ -1,18 +1,10 @@
-# UC8 – Save Student Results to File
+# UC9 – Read Student Results from File
 
-students = [
-    {"name": "John", "roll": 101, "marks": [80, 85, 90], "average": 85.0, "grade": "B"},
-    {"name": "Alice", "roll": 102, "marks": [92, 88, 95], "average": 91.6, "grade": "A"}
-]
+try:
+    with open("student_results.txt", "r") as file:
+        data = file.read()
+        print("Student Results from File:\n")
+        print(data)
 
-with open("student_results.txt", "w") as file:
-
-    for student in students:
-        file.write(f"Name: {student['name']}\n")
-        file.write(f"Roll Number: {student['roll']}\n")
-        file.write(f"Marks: {student['marks']}\n")
-        file.write(f"Average: {student['average']}\n")
-        file.write(f"Grade: {student['grade']}\n")
-        file.write("------------------------\n")
-
-print("Student results saved to file successfully.")
+except FileNotFoundError:
+    print("Error: student_results.txt file not found.")
